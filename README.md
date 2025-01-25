@@ -1,17 +1,31 @@
-# Mes configurations Cloud Init
+# Mes configurations Cloud Init (user-data) pour le création d'une VM ou d'une instance avec Cloud-init
 
-## Rocky Linux 9.5 Cloud Image
+## Qu'est-ce que Cloud-init ?
 
-Référence : https://rockylinux.org/fr-FR/download | https://cloudinit.readthedocs.io/en/latest/reference/examples.html
+Cloud-Init était au départ un projet propre à Ubuntu. Il permettait à l'époque de configurer certains paramètres par défaut comme la langue, le nom d'hôte, les clés SSH, les points de montage, etc.
+
+Désormais, il s'agit d'un véritable standard de l'industrie du cloud. L'outil, toujours open source, est aussi bien plus complet comme le montre sa documentation. Il s'agit toujours de créer un fichier de configuration (user-data) indiquant des paramètres à prendre en compte au premier démarrage (mais pas que). Il peut être accompagné de métadonnées d'instance.
+
+## Comment ça fonctionne ?
+
+Pour utiliser cloud-init, il faut au préalable créer un fichier de configuration `cloud-config`, dans la plupart des cas écrit en YAML. Ce fichier contient les directives qui seront exécutées lors du premier démarrage de l’instance. Il existe de nombreuses façons de transmettre les `user-data`.
+
+### Mes fichiers `cloud-config`
+
+Référence : https://cloudinit.readthedocs.io/en/latest/reference/examples.html
 
 Si vous êtes curieux, le mot de passe haché est le suivant `Pa22word`.
 
-Dans le fichier `cloud.cfg`, l'option `passwd` stocke le hachage (et non le mot de passe lui-même) du mot de passe que vous souhaitez utiliser pour cet utilisateur. Vous pouvez générer un hachage via :
+Dans le fichier `cloud-config.yaml`, l'option `passwd` stocke le hachage (et non le mot de passe lui-même) du mot de passe que vous souhaitez utiliser pour cet utilisateur. Vous pouvez générer un hachage via :
 ```bash
 mkpasswd --method=SHA-512 --rounds=4096 Pa22word
 $6$rounds=4096$LRtCHGk0IrYsEBz3$8SKmYn7ITyv7OH5BXFjCvAJVMqChaCosx8YI.8dQdSujC59OkF67bT8gwpOkuykP9FkJtF4KOxtHgvmh4pUYc0
 ```
 ***La commande ci-dessus, crée à partir de `stdin`, un hachage de mot de passe SHA-512 avec 4096 tours de salage.***
+
+####Rocky Linux 9.5 Cloud Image
+
+Référence : https://rockylinux.org/fr-FR/download
 
 Voici la configuration utilisateur à déclarer avant le démarrage de la machine Cloud :
 ```yaml
