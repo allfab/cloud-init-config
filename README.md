@@ -60,4 +60,26 @@ users:
 ssh_authorized_keys:
   - >
     ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA26evmemRbhTtjV9szD9SwcFW9VOD38jDuJmyYYdqoqIltDkpUqDa/V1jxLSyrizhOHrlJtUOj790cxrvInaBNP7nHIO+GwC9VH8wFi4KG/TFj3K8SfNZ24QoUY12rLiHR6hRxcT4aUGnqFHGv2WTqsW2sxz03z+W1qeMqWYJOUfkqKKs2jiz42U+0Kp9BxsFBlai/WAXrQsYC8CcpQSRKdggOMQf04CqqhXzt5Q4Cmago+Fr7HcvEnPDAaNcVtfS5DYLERcX2OVgWT3RBWhDIjD8vYCMBBCy2QUrc4ZhKZfkF9aemjnKLfLcbdpMfb+r7NwJsVQSPKcjYAJOckE8RQ== allfab@cloudinit-rockylinux
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: false
+      addresses:
+        - 192.168.10.100/24
+      gateway4: 192.168.10.1
+      nameservers:
+        addresses:
+          - 1.1.1.1
+          - 1.0.0.1
+```
+Il est également possible de paramétrer l'instance en DHCP :
+
+```yaml
+...
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: true
 ```
