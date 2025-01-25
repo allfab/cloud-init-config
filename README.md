@@ -2,13 +2,11 @@
 
 ## Qu'est-ce que Cloud-init ?
 
-Cloud-Init était au départ un projet propre à Ubuntu. Il permettait à l'époque de configurer certains paramètres par défaut comme la langue, le nom d'hôte, les clés SSH, les points de montage, etc.
-
-Désormais, il s'agit d'un véritable standard de l'industrie du cloud. L'outil, toujours open source, est aussi bien plus complet comme le montre sa documentation. Il s'agit toujours de créer un fichier de configuration (user-data) indiquant des paramètres à prendre en compte au premier démarrage (mais pas que). Il peut être accompagné de métadonnées d'instance.
+Cloud-Init était au départ un projet propre à Ubuntu. Il permettait à l'époque de configurer certains paramètres par défaut comme la langue, le nom d'hôte, les clés SSH, les points de montage, etc. Il s'agit désormais d'un véritable standard de l'industrie du cloud.
 
 ## Comment ça fonctionne ?
 
-Pour utiliser cloud-init, il faut au préalable créer un fichier de configuration `cloud-config`, dans la plupart des cas écrit en YAML. Ce fichier contient les directives qui seront exécutées lors du premier démarrage de l’instance. Il existe de nombreuses façons de transmettre les `user-data`.
+Pour utiliser cloud-init, il faut au préalable créer un fichier de configuration `cloud-config`, dans la plupart des cas écrit en YAML. Ce fichier contient les directives qui seront exécutées lors du premier démarrage de l’instance. Il s'agit de créer un fichier de configuration (user-data) indiquant des paramètres à prendre en compte au premier démarrage (entre autres).
 
 ### Mes fichiers `cloud-config`
 
