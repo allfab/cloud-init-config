@@ -6,7 +6,7 @@ Cloud-Init était au départ un projet propre à Ubuntu. Il permettait à l'épo
 
 ## Comment ça fonctionne ?
 
-Pour utiliser cloud-init, il faut au préalable créer un fichier de configuration `cloud-config`, dans la plupart des cas écrit en YAML. Ce fichier contient les directives qui seront exécutées lors du premier démarrage de l’instance. Il s'agit de créer un fichier de configuration (user-data) indiquant des paramètres à prendre en compte au premier démarrage (entre autres).
+Pour utiliser cloud-init, il faut au préalable créer un fichier de configuration `cloud-config`, dans la plupart des cas écrit en YAML. Ce fichier contient les directives qui seront exécutées lors du premier démarrage de l’instance. Il s'agit de créer un fichier de configuration (user-data) indiquant des paramètres à prendre en compte au premier démarrage.
 
 ### Mes fichiers `cloud-config`
 
