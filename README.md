@@ -1,4 +1,4 @@
-# Ma configuration Cloud Init
+# Mes configurations Cloud Init
 
 ## Rocky Linux 9.5 Cloud Image
 
