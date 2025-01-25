@@ -1,4 +1,4 @@
-# Mes configurations Cloud Init (user-data) pour le création d'une VM ou d'une instance avec Cloud-init
+# Mes configurations Cloud Init (user-data) pour le création de VMs ou d'instances avec Cloud-init
 
 ## Qu'est-ce que Cloud-init ?
 
