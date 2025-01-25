@@ -5,14 +5,13 @@
 Référence : https://rockylinux.org/fr-FR/download | https://cloudinit.readthedocs.io/en/latest/reference/examples.html
 
 Si vous êtes curieux, le mot de passe haché est le suivant `Pa22word`.
-Pour obtenir le hashage du mot de passe, voici la démarche à suivre :
+
+Dans le fichier `cloud.cfg`, l'option `passwd` stocke le hachage (et non le mot de passe lui-même) du mot de passe que vous souhaitez utiliser pour cet utilisateur. Vous pouvez générer un hachage via :
 ```bash
 mkpasswd --method=SHA-512 --rounds=4096 Pa22word
 $6$rounds=4096$LRtCHGk0IrYsEBz3$8SKmYn7ITyv7OH5BXFjCvAJVMqChaCosx8YI.8dQdSujC59OkF67bT8gwpOkuykP9FkJtF4KOxtHgvmh4pUYc0
 ```
-***La commande ci-dessus crée à partir de `stdin` un hachage de mot de passe SHA-512 avec 4096 tours de salage.***
-
-`passwd` : le hachage (et non le mot de passe lui-même) du mot de passe que vous souhaitez utiliser pour cet utilisateur. Vous pouvez générer un hachage via :
+***La commande ci-dessus, crée à partir de `stdin`, un hachage de mot de passe SHA-512 avec 4096 tours de salage.***
 
 Voici la configuration utilisateur à déclarer avant le démarrage de la machine Cloud :
 ```yaml
