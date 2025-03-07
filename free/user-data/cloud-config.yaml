@@ -1,0 +1,19 @@
+#cloud-config
+#Spécifie les détails de l'utilisateur par défaut : https://docs.redhat.com/fr/documentation/red_hat_enterprise_linux/9/html-single/configuring_and_managing_cloud-init_for_rhel_9/index#the-default-cloud-cfg-file_red-hat-support-for-cloud-init
+system_info:
+  default_user:
+    name: allfab    
+    gecos: Fabien
+    groups: wheel
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    shell: /bin/bash
+    lock_passwd: true
+    ssh_authorized_keys:
+      - ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAFFxFS0K8uHnGFJErT2mRRbDDnOsccZEgzskxFUnokmqrXPhNxd0EJkpKSk0JJljSlugGfzfuwVw/6iYkwYRgfOTACnEon5wkDuGGetRLkB4V3zmcho0uMcnxZh0FQxrFkV13JEzJJQT4ovKRT/OoGmo6w1VJyTfE8H/kK1Zq6f/0ZASA== allfab@cloudinit-rockylinux
+chpasswd:
+  list: |
+     root:Pa22worD
+     allfab:Pa22word
+  expire: False
+disable_root: True
+ssh_pwauth: False
