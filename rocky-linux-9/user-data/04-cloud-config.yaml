@@ -1,0 +1,17 @@
+#cloud-config
+#Ajouter des utilisateurs et des options d'utilisateur avec cloud-init
+users:
+  - default           # rocky default cloud-init image user
+  - name: allfab
+    gecos: Fabien
+    # selinux-user: staff_u
+    groups: wheel
+    ssh_pwauth: True
+    ssh_authorized_keys:
+      - ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAFFxFS0K8uHnGFJErT2mRRbDDnOsccZEgzskxFUnokmqrXPhNxd0EJkpKSk0JJljSlugGfzfuwVw/6iYkwYRgfOTACnEon5wkDuGGetRLkB4V3zmcho0uMcnxZh0FQxrFkV13JEzJJQT4ovKRT/OoGmo6w1VJyTfE8H/kK1Zq6f/0ZASA== allfab@cloudinit-rockylinux
+chpasswd:
+  list: |
+    root:Pa22worD
+    rocky:linux
+    allfab:Pa22word
+  expire: False

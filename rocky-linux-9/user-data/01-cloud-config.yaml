@@ -1,0 +1,8 @@
+#cloud-config
+#Expirer le mot de passe de l'utilisateur par défaut : rocky
+password: Pa22word
+chpasswd: {expire: False}
+ssh_pwauth: True
+ssh_authorized_keys:
+  - ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAFFxFS0K8uHnGFJErT2mRRbDDnOsccZEgzskxFUnokmqrXPhNxd0EJkpKSk0JJljSlugGfzfuwVw/6iYkwYRgfOTACnEon5wkDuGGetRLkB4V3zmcho0uMcnxZh0FQxrFkV13JEzJJQT4ovKRT/OoGmo6w1VJyTfE8H/kK1Zq6f/0ZASA== allfab@cloudinit-rockylinux
+  
